@@ -1,3 +1,4 @@
+import Widget from "./Widget";
 import ToDoItem from "./ToDoItem";
 
 function ToDo() {
@@ -7,9 +8,11 @@ function ToDo() {
   ]
   const toDoItems = tasks.map(task => <ToDoItem key={task.id} {...task}/>);
   return (
+    <Widget>
     <div className="flex flex-col items-center p-2">
       {toDoItems}
     </div>
+    </Widget>
   )
 }
 

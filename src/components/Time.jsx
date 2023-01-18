@@ -1,3 +1,4 @@
+import Widget from "./Widget";
 import {useState, useEffect} from "react";
 
 function Time() {
@@ -20,10 +21,12 @@ function Time() {
     })
   })
   return (
-    <div className="flex justify-center items-center h-full flex-col">
-      <p className="text-4xl font-bold">{time.toLocaleTimeString()}</p>
-      <p className="text-lg">{time.toLocaleDateString("en-US", options)}</p>
-    </div>
+    <Widget>
+      <div className="flex justify-center items-center h-full flex-col">
+        <p className="text-4xl font-bold">{time.toLocaleTimeString()}</p>
+        <p className="text-lg">{time.toLocaleDateString("en-US", options)}</p>
+      </div>
+    </Widget>
   )
 }
 

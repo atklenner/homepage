@@ -1,4 +1,4 @@
-import Widget from "./components/Block";
+import Widget from "./components/Widget";
 
 function App() {
   return (
@@ -7,8 +7,8 @@ function App() {
         <div className="grid grid-cols-2 grid-rows-2 gap-16 h-5/6 w-5/6">
           <Widget type="time"/>
           <Widget type="weather"/>
+          <Widget type="to-do"/>
           <Widget type="links"/>
-          <Widget type="to-do list"/>
         </div>
       </div>
     </div>

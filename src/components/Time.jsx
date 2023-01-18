@@ -3,6 +3,13 @@ import {useState, useEffect} from "react";
 function Time() {
   let [time, setTime] = useState(new Date());
 
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+
   useEffect(() => {
     let timer = setInterval(() => {
       setTime(new Date())
@@ -13,7 +20,10 @@ function Time() {
     })
   })
   return (
-    <p>{time.toLocaleTimeString()}</p>
+    <div className="flex justify-center items-center h-full flex-col">
+      <p className="text-4xl font-bold">{time.toLocaleTimeString()}</p>
+      <p className="text-lg">{time.toLocaleDateString("en-US", options)}</p>
+    </div>
   )
 }
 

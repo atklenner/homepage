@@ -21,10 +21,10 @@ function Time() {
     })
   })
   return (
-    <Widget>
-      <div className="flex justify-center items-center h-full flex-col">
-        <p className="text-4xl font-bold">{time.toLocaleTimeString()}</p>
-        <p className="text-lg">{time.toLocaleDateString("en-US", options)}</p>
+    <Widget type="short">
+      <div>
+      <p className="text-4xl font-bold">{time.toLocaleTimeString()}</p>
+      <p className="text-lg">{time.toLocaleDateString("en-US", options)}</p>
       </div>
     </Widget>
   )

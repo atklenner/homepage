@@ -13,7 +13,7 @@ function ToDo() {
 
   return (
     <Widget>
-      <div className="flex flex-col items-center p-2">
+      <div className="flex flex-col h-full w-full items-center p-2">
         {toDoItems}
         <ToDoInput dispatch={dispatch}/>
       </div>

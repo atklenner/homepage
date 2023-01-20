@@ -1,3 +1,5 @@
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faPlus} from "@fortawesome/free-solid-svg-icons";
 import Block from "./Block";
 import {useState} from "react";
 import {useTasksDispatch} from "../context/ToDoContext";
@@ -19,9 +21,11 @@ function ToDoInput() {
   }
   return (
     <Block>
-      <form onSubmit={onSubmit}>
-        <input type="text" value={text} onChange={(e) => setText(e.target.value)}/>
-        <input type="submit" value="add" />
+      <form className="flex w-full justify-between" onSubmit={onSubmit}>
+        <input type="text" className="grow mr-4" value={text} onChange={(e) => setText(e.target.value)}/>
+        <button>
+          <FontAwesomeIcon icon={faPlus}/>
+        </button>
       </form>
     </Block>
   )

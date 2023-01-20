@@ -1,3 +1,5 @@
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faTrash} from "@fortawesome/free-solid-svg-icons";
 import Block from "./Block";
 
 function ToDoItem({id, text, done, dispatch}) {
@@ -7,7 +9,9 @@ function ToDoItem({id, text, done, dispatch}) {
     <Block>
       <input type="checkbox" checked={done} onChange={() => dispatch({type:"toggle", id})}/>
       <p className={strikethrough}>{text}</p>
-      <input type="button" value="del" onClick={() => dispatch({type:"delete", id})}/>
+      <button onClick={() => dispatch({type:"delete", id})}>
+        <FontAwesomeIcon icon={faTrash} />
+      </button>
     </Block>
   )
 }

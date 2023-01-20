@@ -1,20 +1,16 @@
 import Widget from "./Widget";
-import ToDoItem from "./ToDoItem";
 import ToDoInput from "./ToDoInput";
+import ToDoList from "./ToDoList";
 import toDoReducer from "../reducers/toDoReducer";
 import {useReducer} from "react";
 
 function ToDo() {
   const [tasks, dispatch] = useReducer(toDoReducer, initialTasks);
   
-  const toDoItems = tasks.map(task => {
-    return <ToDoItem key={task.id} dispatch={dispatch} {...task}/>
-  });
-
   return (
     <Widget>
       <div className="flex flex-col h-full w-full items-center p-2">
-        {toDoItems}
+        <ToDoList tasks={tasks} dispatch={dispatch}/>
         <ToDoInput dispatch={dispatch}/>
       </div>
     </Widget>

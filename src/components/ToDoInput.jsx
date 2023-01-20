@@ -3,6 +3,7 @@ import {faPlus} from "@fortawesome/free-solid-svg-icons";
 import Block from "./Block";
 import {useState} from "react";
 import {useTasksDispatch} from "../context/ToDoContext";
+import {nanoid} from "nanoid";
 
 function ToDoInput() {
   const dispatch = useTasksDispatch();
@@ -13,7 +14,7 @@ function ToDoInput() {
     if (text !== "") {
       dispatch({
         type: "add",
-        id: Math.random() * 10000,
+        id: nanoid(),
         text
       });
       setText("");

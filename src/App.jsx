@@ -8,9 +8,8 @@ function App() {
       <div className="flex justify-center items-center h-5/6 w-5/6 bg-red-200 rounded-2xl">
         <div className="grid grid-cols-2 grid-rows-4 gap-16 h-5/6 w-5/6">
           <Time />
-          <Widget type="short"/>
           <ToDo />
-          <Widget />
+          <Widget type="short"/>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 function Widget({children, type}) {
-  let shortStyle = type === "short"? "row-span-1" : "row-span-3";
+  let shortStyle = type === "short"? "row-span-2" : "row-span-4";
   return (
     <div className={`
       bg-red-100 

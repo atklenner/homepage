@@ -1,10 +1,13 @@
 import Block from "./Block";
 import {useState} from "react";
+import {useTasksDispatch} from "../context/ToDoContext";
 
-function ToDoInput({dispatch}) {
+function ToDoInput() {
+  const dispatch = useTasksDispatch();
   const [text, setText] = useState("");
 
-  function onClick() {
+  function onSubmit(e) {
+    e.preventDefault();
     if (text !== "") {
       dispatch({
         type: "add",
@@ -16,8 +19,10 @@ function ToDoInput({dispatch}) {
   }
   return (
     <Block>
-      <input type="text" value={text} onChange={(e) => setText(e.target.value)}/>
-      <input type="button" value="add" onClick={onClick} />
+      <form onSubmit={onSubmit}>
+        <input type="text" value={text} onChange={(e) => setText(e.target.value)}/>
+        <input type="submit" value="add" />
+      </form>
     </Block>
   )
 }

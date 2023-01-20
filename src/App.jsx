@@ -1,6 +1,6 @@
-import Widget from "./components/Widget";
 import Time from "./components/Time";
 import ToDo from "./components/ToDo";
+import Links from "./components/Links";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <div className="grid grid-cols-2 grid-rows-4 gap-16 h-5/6 w-5/6">
           <Time />
           <ToDo />
-          <Widget type="short"/>
+          <Links />
         </div>
       </div>
     </div>

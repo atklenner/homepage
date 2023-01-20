@@ -5,7 +5,7 @@ export default function toDoReducer(tasks, action) {
         ...tasks,
         {
           id: action.id,
-          text: action.text,
+          text: action.text.slice(0, 50),
           done: false,
         }
       ];

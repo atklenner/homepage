@@ -24,7 +24,7 @@ function Time() {
     <Widget type="short">
       <div>
       <p className="text-4xl font-bold">{time.toLocaleTimeString()}</p>
-      <p className="text-lg">{time.toLocaleDateString("en-US", options)}</p>
+      <p className="text-lg text-center">{time.toLocaleDateString("en-US", options)}</p>
       </div>
     </Widget>
   )

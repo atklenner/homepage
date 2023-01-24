@@ -5,14 +5,9 @@ import Block from "./Block";
 function Link() {
   return (
     <Block>
-      <div className="flex justify-between w-full">
-        <a href="https://www.twitter.com" className="grow mr-4" target="_blank">
-          link
-        </a>
-        <button className="px-1">
-          <FontAwesomeIcon icon={faEllipsisVertical} />
-        </button>
-      </div>
+      <a href="https://www.twitter.com" className="h-full w-full flex justify-center items-center text-lg font-medium" target="_blank">
+        Twitter
+      </a>
     </Block>
   )
 }

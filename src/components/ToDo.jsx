@@ -8,7 +8,7 @@ function ToDo() {
   return (
     <ToDoProvider>
       <Widget>
-        <div className="flex flex-col items-stretch gap-4 h-full w-5/6 items-center py-4">
+        <div className="flex flex-col items-stretch gap-4 h-full w-full items-center">
           <ToDoList/>
           <ToDoInput/>
         </div>

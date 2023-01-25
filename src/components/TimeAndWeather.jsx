@@ -45,10 +45,10 @@ function TimeAndWeather() {
     <Widget type="short">
       <div className="flex flex-col justify-evenly text-center h-full">
         <div>
-          <p className="text-4xl font-bold">{time.toLocaleTimeString()}</p>
-          <p className="text-lg">{time.toLocaleDateString("en-US", options)}</p>
+          <p className="text-5xl font-bold">{time.toLocaleTimeString()}</p>
+          <p className="text-xl">{time.toLocaleDateString("en-US", options)}</p>
         </div>
-        <p className="text-4xl font-bold">{formatTemp(temp)}</p>
+        <p className="text-5xl font-bold">{formatTemp(temp)}</p>
       </div>
     </Widget>
   )

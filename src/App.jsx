@@ -4,9 +4,9 @@ import Links from "./components/Links";
 
 function App() {
   return (
-    <div className="flex justify-center items-center h-screen bg-red-600">
-      <div className="flex justify-center items-center h-5/6 w-5/6 bg-red-200 rounded-2xl">
-        <div className="grid grid-cols-2 grid-rows-4 gap-16 h-5/6 w-5/6">
+    <div className="flex justify-center items-center h-screen bg-red-600 px-32 py-16">
+      <div className="flex justify-center items-center h-full w-full bg-red-200 rounded-2xl px-32 py-16">
+        <div className="grid grid-cols-2 grid-rows-4 gap-16 h-full w-full">
           <TimeAndWeather />
           <ToDo />
           <Links />

@@ -1,5 +1,6 @@
 import {createContext, useReducer, useContext, useEffect} from "react";
 import toDoReducer from "../reducers/toDoReducer";
+import {getStorage, setStorage} from "../helpers/localStorage";
 
 export const ToDoContext = createContext(null);
 export const ToDoDispatchContext = createContext(null);
@@ -9,22 +10,10 @@ const initialTasks = [
   ];
 
 export function ToDoProvider({children}) {
-  const [tasks, dispatch] = useReducer(toDoReducer, initialTasks, () => {
-    try {
-      const tasks = window.localStorage.getItem("tasks");
-      return tasks ? JSON.parse(tasks) : initialTasks;
-    } catch (error) {
-      console.log(error);
-      return initialTasks;
-    }
-  });
+  const [tasks, dispatch] = useReducer(toDoReducer, getStorage("tasks", initialTasks));
   
   useEffect(() => {
-    try {
-      window.localStorage.setItem("tasks", JSON.stringify(tasks));
-    } catch (error) {
-      console.log(error);
-    }
+    setStorage("tasks", tasks);
   }, [tasks]);
 
   return (

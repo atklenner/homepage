@@ -8,8 +8,12 @@ function Widget({children, type}) {
       flex 
       justify-center
       items-center
-      px-16
-      py-8
+      px-4
+      md:px-8
+      2xl:px-16
+      py-2
+      md:py-4
+      2xl:py-8
       ${shortStyle}
     `}>
       {children}

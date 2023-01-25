@@ -43,12 +43,12 @@ function TimeAndWeather() {
 
   return (
     <Widget type="short">
-      <div className="flex flex-col justify-evenly text-center h-full">
+      <div className="flex flex-col md:flex-row lg:flex-col justify-evenly  items-center text-center h-full w-full">
         <div>
-          <p className="text-5xl font-bold">{time.toLocaleTimeString()}</p>
-          <p className="text-xl">{time.toLocaleDateString("en-US", options)}</p>
+          <p className="text-3xl lg:text-5xl font-bold">{time.toLocaleTimeString()}</p>
+          <p className="lg:text-xl">{time.toLocaleDateString("en-US", options)}</p>
         </div>
-        <p className="text-5xl font-bold">{formatTemp(temp)}</p>
+        <p className="text-3xl lg:text-5xl font-bold">{formatTemp(temp)}</p>
       </div>
     </Widget>
   )

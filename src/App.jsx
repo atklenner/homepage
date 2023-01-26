@@ -3,7 +3,7 @@ import ToDo from "./components/ToDo";
 import Links from "./components/Links";
 import {useState} from "react";
 import LinkSettings from "./components/LinkSettings";
-import ThemeSettings  from "./components/ThemeSettings";
+import GeneralSettings  from "./components/GeneralSettings";
 function App() {
   const [viewSettings, setViewSettings] = useState(false);
 
@@ -13,7 +13,7 @@ function App() {
         <div className="grid lg:grid-cols-2 lg:grid-rows-4 gap-8 2xl:gap-16 h-full w-full">
           <TimeAndWeather viewSettings={viewSettings} onClick={() => setViewSettings(!viewSettings)}/>
           {viewSettings ? <LinkSettings /> : <ToDo />}
-          {viewSettings ? <ThemeSettings /> : <Links />}
+          {viewSettings ? <GeneralSettings/> : <Links />}
         </div>
       </div>
     </div>

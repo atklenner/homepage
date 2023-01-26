@@ -1,9 +1,11 @@
 import Widget from "./Widget";
 import {useState, useEffect} from "react";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faHome, faGear} from "@fortawesome/free-solid-svg-icons";
 
 const API_KEY = "d6033a7a4a4fb3ac4ada99b04bd0f8e4";
 
-function TimeAndWeather() {
+function TimeAndWeather({onClick, viewSettings}) {
   let [time, setTime] = useState(new Date());
 
   const options = {
@@ -49,6 +51,9 @@ function TimeAndWeather() {
           <p className="lg:text-xl">{time.toLocaleDateString("en-US", options)}</p>
         </div>
         <p className="text-3xl lg:text-5xl font-bold">{formatTemp(temp)}</p>
+        <button onClick={onClick}>
+          <FontAwesomeIcon icon={viewSettings ? faHome : faGear} />
+        </button>
       </div>
     </Widget>
   )

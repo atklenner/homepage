@@ -6,14 +6,14 @@ export const LinksContext = createContext(null);
 export const LinksDispatchContext = createContext(null);
 
 const initialLinks = [
-    {id: 1, text: "GitHub", link: "http://www.github.com/atklenner"},
-    {id: 2, text: "", link: ""},
-    {id: 3, text: "", link: ""},
-    {id: 4, text: "", link: ""},
-    {id: 5, text: "", link: ""},
-    {id: 6, text: "", link: ""},
-    {id: 7, text: "", link: ""},
-    {id: 8, text: "", link: ""},
+    {id: 1, text: "GitHub", url: "http://www.github.com/atklenner"},
+    {id: 2, text: "", url: ""},
+    {id: 3, text: "", url: ""},
+    {id: 4, text: "", url: ""},
+    {id: 5, text: "", url: ""},
+    {id: 6, text: "", url: ""},
+    {id: 7, text: "", url: ""},
+    {id: 8, text: "", url: ""},
   ];
 
 export function LinksProvider({children}) {

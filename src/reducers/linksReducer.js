@@ -6,14 +6,14 @@ export default function linksReducer(tasks, action) {
         return {
           id: action.id,
           text: action.text,
-          link: action.link,
+          url: action.url,
         }
       })
     }
     case "delete": {
       return tasks.map((task) => {
         if (task.id !== action.id) return task;
-        return {id: action.id, text: "", link: ""}
+        return {id: action.id, text: "", url: ""}
       });
     }
     default: {

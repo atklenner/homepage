@@ -5,9 +5,9 @@ import Block from "./Block";
 function Link({ url, text }) {
   return (
     <Block>
-      <a href={url} className="h-full w-full flex justify-center items-center text-lg font-medium" target="_blank">
+      {url && <a href={url} className="h-full w-full flex justify-center items-center text-lg font-medium" target="_blank">
         {text}
-      </a>
+      </a>}
     </Block>
   )
 }

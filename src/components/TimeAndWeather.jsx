@@ -1,4 +1,5 @@
 import Widget from "./Widget";
+import Time from "./Time";
 import {useState, useEffect} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHome, faGear} from "@fortawesome/free-solid-svg-icons";
@@ -6,24 +7,6 @@ import {faHome, faGear} from "@fortawesome/free-solid-svg-icons";
 const API_KEY = "d6033a7a4a4fb3ac4ada99b04bd0f8e4";
 
 function TimeAndWeather({onClick, viewSettings}) {
-  let [time, setTime] = useState(new Date());
-
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-
-  useEffect(() => {
-    let timer = setInterval(() => {
-      setTime(new Date())
-    }, 1000);
-
-    return (() => {
-      clearInterval(timer);
-    })
-  })
   
   const [temp, setTemp] = useState();
 
@@ -46,13 +29,10 @@ function TimeAndWeather({onClick, viewSettings}) {
   return (
     <Widget type="short">
       <div className="flex flex-col md:flex-row lg:flex-col justify-evenly  items-center text-center h-full w-full">
-        <div>
-          <p className="text-3xl lg:text-5xl font-bold">{time.toLocaleTimeString()}</p>
-          <p className="lg:text-xl">{time.toLocaleDateString("en-US", options)}</p>
-        </div>
+        <Time />
         <p className="text-3xl lg:text-5xl font-bold">{formatTemp(temp)}</p>
         <button onClick={onClick}>
-          <FontAwesomeIcon icon={viewSettings ? faHome : faGear} />
+          <FontAwesomeIcon title="View settings" icon={viewSettings ? faHome : faGear} />
         </button>
       </div>
     </Widget>

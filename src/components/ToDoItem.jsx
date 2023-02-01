@@ -7,10 +7,12 @@ function ToDoItem({id, text, done, dispatch}) {
 
   return (
     <Block>
-      <input type="checkbox" checked={done} onChange={() => dispatch({type:"toggle", id})}/>
-      <p className={strikethrough}>{text}</p>
+      <label className="sr-only" for={`complete-${id}`}>{`${done ? "Uncheck" : "Check off"} task ${text}`}</label>
+      <input title={`${done ? "Uncheck" : "Check off"} task ${text}`} name={`complete-${id}`} type="checkbox" checked={done} onChange={() => dispatch({type:"toggle", id})}/>
+      <p className={strikethrough}><span className="sr-only">{done ? "Completed" : ""}</span>{text}</p>
       <button onClick={() => dispatch({type:"delete", id})}>
-        <FontAwesomeIcon icon={faTrash} />
+        <FontAwesomeIcon icon={faTrash} title={`Delete task ${text}`}/>
+        <span className="sr-only">{`Delete task ${text}`}</span>
       </button>
     </Block>
   )

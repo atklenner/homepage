@@ -31,8 +31,9 @@ function TimeAndWeather({onClick, viewSettings}) {
       <div className="flex flex-col md:flex-row lg:flex-col justify-evenly  items-center text-center h-full w-full">
         <Time />
         <p className="text-3xl lg:text-5xl font-bold">{formatTemp(temp)}</p>
-        <button onClick={onClick}>
-          <FontAwesomeIcon title="View settings" icon={viewSettings ? faHome : faGear} />
+        <button name="settings" onClick={onClick}>
+          <FontAwesomeIcon title={viewSettings ? "Hide settings menu" : "Show settings menu"} icon={viewSettings ? faHome : faGear} />
+          <span className="sr-only">{`${viewSettings ? "Hide" : "Show"} settings menu`}</span>
         </button>
       </div>
     </Widget>

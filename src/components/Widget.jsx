@@ -1,7 +1,7 @@
 function Widget({children, type}) {
   let shortStyle = type === "short"? "row-span-2" : "row-span-4";
   return (
-    <div className={`
+    <section className={`
       bg-mantle
       rounded-xl 
       overflow-auto 
@@ -17,7 +17,7 @@ function Widget({children, type}) {
       ${shortStyle}
     `}>
       {children}
-    </div>
+    </section>
   )
 }
 

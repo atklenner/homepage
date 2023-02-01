@@ -23,8 +23,8 @@ function LinkFields({ url, text, id }) {
   return (
     <Block>
       <div className="mr-2">
-        <input className="w-full mb-2" type="text" placeholder="Name" value={inputText} onChange={(e) => setInputText(e.target.value)}/>
-        <input className="w-full" type="text" placeholder="URL" value={inputUrl} onChange={(e) => setInputUrl(e.target.value)}/>
+        <input className="w-full mb-2 px-1 rounded-sm" type="text" placeholder="Name" value={inputText} onChange={(e) => setInputText(e.target.value)}/>
+        <input className="w-full px-1 rounded-sm" type="text" placeholder="URL" value={inputUrl} onChange={(e) => setInputUrl(e.target.value)}/>
       </div>
       <button onClick={handleClick}>
         <FontAwesomeIcon icon={faTrash} />

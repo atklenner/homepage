@@ -7,13 +7,14 @@ function Widget({children, type}) {
       overflow-auto 
       flex 
       justify-center
-      items-center
+      items-start
+      lg:items-center
       px-4
       md:px-8
-      2xl:px-16
+      2xl:px-12
       py-2
       md:py-4
-      2xl:py-8
+      2xl:py-6
       ${shortStyle}
     `}>
       {children}

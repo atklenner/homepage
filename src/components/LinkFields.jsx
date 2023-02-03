@@ -23,10 +23,10 @@ function LinkFields({ url, text, id }) {
   return (
     <Block>
       <div className="mr-2">
-        <label for={`url-name-${id}`} className="sr-only">Name of webpage</label>
-        <input className="w-full mb-2 px-1 rounded-sm bg-surface1" type="text" placeholder="Name of webpage" value={inputText} onChange={(e) => setInputText(e.target.value)}/>
-        <label for={`url-${id}`} className="sr-only">URL</label>
-        <input className="w-full px-1 rounded-sm bg-surface1" type="text" placeholder="URL" value={inputUrl} onChange={(e) => setInputUrl(e.target.value)}/>
+        <label htmlFor={`url-name-${id}`} className="sr-only">Name of webpage</label>
+        <input id={`url-name-${id}`} className="w-full mb-2 px-1 rounded-sm bg-surface1" type="text" placeholder="Name of webpage" value={inputText} onChange={(e) => setInputText(e.target.value)}/>
+        <label htmlFor={`url-${id}`} className="sr-only">URL</label>
+        <input id={`url-${id}`} className="w-full px-1 rounded-sm bg-surface1" type="text" placeholder="URL" value={inputUrl} onChange={(e) => setInputUrl(e.target.value)}/>
       </div>
       <button onClick={handleClick}>
         <FontAwesomeIcon icon={faTrash} title={`Delete Link to ${text}`}/>

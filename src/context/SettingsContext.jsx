@@ -5,7 +5,7 @@ import { getStorage, setStorage } from "../helpers/localStorage";
 const SettingsContext = createContext(null);
 const SettingsDispatchContext = createContext(null);
 
-const initSettings = { theme: "mocha", unit: "fahrenheit", hours: "twelve" };
+const initSettings = { theme: "mocha", unit: "fahrenheit" };
 
 export function SettingsProvider({children}) {
   const [settings, dispatch] = useReducer(settingsReducer, getStorage("settings", initSettings));

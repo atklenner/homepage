@@ -6,9 +6,6 @@ export default function settingsReducer(settings, action) {
     case "unit": {
       return { ...settings, unit: action.unit };
     }
-    case "hours": {
-      return { ...settings, hours: action.hours };
-    }
     default: {
       throw Error("Unknown action: " + action.type);
     }

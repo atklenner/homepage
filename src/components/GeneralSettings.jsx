@@ -50,17 +50,6 @@ function GeneralSettings() {
             </div>
           </fieldset>
         </Block>
-        <Block>
-          <fieldset>
-            <legend className="text-lg font-medium">Clock Settings</legend>
-            <div>
-              <input id="twelve" value="twelve" name="hours" type="radio"/>
-              <label className="mr-2" htmlFor="twelve">12 Hour Clock</label>
-              <input id="twentyFour" value="twentyFour" name="hours" type="radio"/>
-              <label htmlFor="twentyFour">24 Hour Clock</label>
-            </div>
-          </fieldset>
-        </Block>
       </div>
     </Widget>
   )

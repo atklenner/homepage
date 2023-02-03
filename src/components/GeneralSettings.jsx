@@ -1,7 +1,17 @@
 import Block from "./Block";
 import Widget from "./Widget";
+import {useSettings, useSettingsDispatch} from "../context/SettingsContext";
 
 function GeneralSettings() {
+  const settings = useSettings();
+  const dispatch = useSettingsDispatch();
+  const themes = ["latte", "frappe", "macchiato", "mocha"];
+
+  function handleThemeChange(e) {
+    console.log(e.target.value)
+    dispatch({type:"theme", theme: e.target.value});
+  }
+
   return (
     <Widget type="short">
       <div className="flex flex-col gap-4">
@@ -9,14 +19,14 @@ function GeneralSettings() {
           <fieldset>
           <legend>Theme</legend>
           <div> 
-            <input id="latte" value="latte" name="theme" type="radio"/>
-            <label className="mr-2" htmlFor="latte">Latte</label>
-            <input id="frappe" value="frappe" name="theme" type="radio"/>
-            <label className="mr-2" htmlFor="frappe">Frappe</label>
-            <input id="macchiato" value="macchiato" name="theme" type="radio"/>
-            <label className="mr-2" htmlFor="macchiato">Macchiato</label>
-            <input id="mocha" value="mocha" name="theme" type="radio" />
-            <label htmlFor="mocha">Mocha</label>
+            {themes.map(theme => {
+              return (
+                <>
+                  <input id={theme} value={theme} type="radio" name="theme" onChange={handleThemeChange} checked={settings.theme === theme ? "checked" : ""}/>
+                  <label htmlFor={theme} className="capitalize mr-2">{theme}</label>
+                </>
+              )
+            })}
           </div>
           </fieldset>
         </Block>

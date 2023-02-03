@@ -23,8 +23,8 @@ function ToDoInput() {
   return (
     <Block>
       <form className="flex w-full justify-between" onSubmit={onSubmit}>
-        <label className="sr-only" htmlFor="add-task">Enter task name</label>
-        <input type="text" id="add-task" className="placeholder:text-text rounded-sm grow mr-4 px-1 bg-surface0" placeholder="Enter task name" value={text} onChange={(e) => setText(e.target.value)}/>
+        <label className="sr-only" htmlFor="add-task">Enter a new task</label>
+        <input type="text" id="add-task" className="placeholder:text-text rounded-sm grow mr-4 px-1 bg-surface0" placeholder="Enter a new task" value={text} onChange={(e) => setText(e.target.value)}/>
         <button>
           <FontAwesomeIcon title="Add task to task list" icon={faPlus}/>
           <span className="sr-only">Add task to task list</span>

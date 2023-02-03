@@ -22,7 +22,7 @@ function LinkFields({ url, text, id }) {
 
   return (
     <Block>
-      <div className="mr-2">
+      <div className="mr-4">
         <label htmlFor={`url-name-${id}`} className="sr-only">Name of webpage</label>
         <input id={`url-name-${id}`} className="w-full mb-2 px-1 rounded-sm bg-surface1" type="text" placeholder="Name of webpage" value={inputText} onChange={(e) => setInputText(e.target.value)}/>
         <label htmlFor={`url-${id}`} className="sr-only">URL</label>

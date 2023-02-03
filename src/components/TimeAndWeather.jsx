@@ -3,11 +3,13 @@ import Time from "./Time";
 import {useState, useEffect} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHome, faGear} from "@fortawesome/free-solid-svg-icons";
+import { useSettings } from "../context/SettingsContext";
 
 const API_KEY = "d6033a7a4a4fb3ac4ada99b04bd0f8e4";
 
 function TimeAndWeather({onClick, viewSettings}) {
-  
+  const settings = useSettings();
+
   const [temp, setTemp] = useState();
 
   useEffect(() => {
@@ -22,8 +24,18 @@ function TimeAndWeather({onClick, viewSettings}) {
     if (!temp) {
       return "";
     }
-    let fahrenheit = 1.8 * (temp - 273.15) + 32;
-    return `${Math.trunc(fahrenheit * 10) / 10}°F`;
+    switch (settings.unit) {
+      case "fahrenheit":
+        let fahrenheit = 1.8 * (temp - 273.15) + 32;
+        return `${Math.round(fahrenheit * 10) / 10}°F`;
+      case "celsius":
+        let celsius = temp - 273.15;
+        return `${Math.round(celsius * 10) / 10}°C`;
+      case "kelvin":
+        return `${Math.round(temp * 10) / 10}°K`;
+      default:
+        throw new Error("Unknown temperature unit");
+    }
   }
 
   return (

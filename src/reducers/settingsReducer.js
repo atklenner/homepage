@@ -3,8 +3,8 @@ export default function settingsReducer(settings, action) {
     case "theme": {
       return { ...settings, theme: action.theme };
     }
-    case "units": {
-      return { ...settings, units: action.units };
+    case "unit": {
+      return { ...settings, unit: action.unit };
     }
     case "hours": {
       return { ...settings, hours: action.hours };

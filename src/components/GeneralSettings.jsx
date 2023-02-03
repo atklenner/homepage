@@ -7,10 +7,14 @@ function GeneralSettings() {
   const settings = useSettings();
   const dispatch = useSettingsDispatch();
   const themes = ["latte", "frappe", "macchiato", "mocha"];
+  const units = ["fahrenheit", "celsius", "kelvin"];
 
   function handleThemeChange(e) {
-    console.log(e.target.value)
-    dispatch({type:"theme", theme: e.target.value});
+    dispatch({ type:"theme", theme: e.target.value });
+  }
+
+  function handleUnitChange(e) {
+    dispatch({ type: "unit", unit: e.target.value });
   }
 
   return (
@@ -18,13 +22,13 @@ function GeneralSettings() {
       <div className="flex flex-col gap-4">
         <Block>
           <fieldset>
-          <legend>Theme</legend>
+          <legend className="text-lg font-medium">Theme</legend>
           <div> 
             {themes.map(theme => {
               return (
                 <Fragment key={theme}>
                   <input id={theme} value={theme} type="radio" name="theme" onChange={handleThemeChange} checked={settings.theme === theme ? "checked" : ""}/>
-                  <label htmlFor={theme} className="capitalize mr-2">{theme}</label>
+                  <label htmlFor={theme} className="capitalize ml-1 mr-4">{theme}</label>
                 </Fragment>
               )
             })}
@@ -33,23 +37,27 @@ function GeneralSettings() {
         </Block>
         <Block>
           <fieldset>
-            <legend>Temperature Units</legend>
+            <legend className="text-lg font-medium">Temperature Units</legend>
             <div>
-              <input id="celsius" value="celsius" name="units" type="radio"/>
-              <label className="mr-2" htmlFor="celsius">Celsius</label>
-              <input id="fahrenheit" value="fahrenheit" name="units" type="radio"/>
-              <label htmlFor="fahrenheit">Fahrenheit</label>
+              {units.map(unit => {
+                return (
+                  <Fragment key={unit}>
+                    <input id={unit} value={unit} type="radio" name="unit" onChange={handleUnitChange} checked={settings.unit === unit ? "checked" : ""}/>
+                    <label htmlFor={unit} className="capitalize ml-1 mr-4">{unit}</label>
+                  </Fragment>
+                )
+              })}
             </div>
           </fieldset>
         </Block>
         <Block>
           <fieldset>
-            <legend>Clock Settings</legend>
+            <legend className="text-lg font-medium">Clock Settings</legend>
             <div>
               <input id="twelve" value="twelve" name="hours" type="radio"/>
-              <label className="mr-2" htmlFor="twelve">Twelve Hour Clock</label>
+              <label className="mr-2" htmlFor="twelve">12 Hour Clock</label>
               <input id="twentyFour" value="twentyFour" name="hours" type="radio"/>
-              <label htmlFor="twentyFour">Twenty Four Hour Clock</label>
+              <label htmlFor="twentyFour">24 Hour Clock</label>
             </div>
           </fieldset>
         </Block>

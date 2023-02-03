@@ -1,3 +1,5 @@
+import { getStorage } from "../helpers/localStorage";
+
 export default function linksReducer(tasks, action) {
   switch (action.type) {
     case "change": {
@@ -15,6 +17,9 @@ export default function linksReducer(tasks, action) {
         if (task.id !== action.id) return task;
         return {id: action.id, text: "", url: ""}
       });
+    }
+    case "refresh": {
+      return getStorage("links");
     }
     default: {
       throw Error("Unknown action: " + action.type);

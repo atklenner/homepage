@@ -23,6 +23,12 @@ export function LinksProvider({children}) {
     setStorage("links", links);
   }, [links]);
 
+  useEffect(() => {
+    window.addEventListener("storage", () => {
+      dispatch({ type: "refresh" });
+    }) 
+  }, []);
+
   return (
     <LinksContext.Provider value={links}>
       <LinksDispatchContext.Provider value={dispatch}>

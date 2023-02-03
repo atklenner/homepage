@@ -1,3 +1,5 @@
+import { getStorage } from "../helpers/localStorage";
+
 export default function toDoReducer(tasks, action) {
   switch (action.type) {
     case "add": {
@@ -21,6 +23,9 @@ export default function toDoReducer(tasks, action) {
     }
     case "delete": {
       return tasks.filter((task) => task.id !== action.id);
+    }
+    case "refresh": {
+      return getStorage("tasks");
     }
     default: {
       throw Error("Unknown action: " + action.type);

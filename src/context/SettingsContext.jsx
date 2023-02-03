@@ -14,6 +14,12 @@ export function SettingsProvider({children}) {
     setStorage("settings", settings);
   }, [settings]);
 
+  useEffect(() => {
+    window.addEventListener("storage", () => {
+      dispatch({ type: "refresh" })
+    });
+  }, []);
+
   return (
     <SettingsContext.Provider value={settings}>
       <SettingsDispatchContext.Provider value={dispatch}>

@@ -16,6 +16,12 @@ export function ToDoProvider({children}) {
     setStorage("tasks", tasks);
   }, [tasks]);
 
+  useEffect(() => {
+    window.addEventListener("storage", () => {
+      dispatch({ type: "refresh" });
+    }) 
+  }, []);
+  
   return (
     <ToDoContext.Provider value={tasks}>
       <ToDoDispatchContext.Provider value={dispatch}>

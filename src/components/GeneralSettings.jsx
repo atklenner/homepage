@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Block from "./Block";
 import Widget from "./Widget";
 import {useSettings, useSettingsDispatch} from "../context/SettingsContext";
@@ -21,10 +22,10 @@ function GeneralSettings() {
           <div> 
             {themes.map(theme => {
               return (
-                <>
+                <Fragment key={theme}>
                   <input id={theme} value={theme} type="radio" name="theme" onChange={handleThemeChange} checked={settings.theme === theme ? "checked" : ""}/>
                   <label htmlFor={theme} className="capitalize mr-2">{theme}</label>
-                </>
+                </Fragment>
               )
             })}
           </div>

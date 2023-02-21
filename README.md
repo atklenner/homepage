@@ -3,7 +3,7 @@ A user friendly customizable homepage.
 
 **Link to project:** https://atklenner.github.io/homepage/
 
-![alt tag](http://placecorgi.com/1200/650)
+![Homepage demo](https://raw.githubusercontent.com/atklenner/atklenner/main/images/homepage-recording.gif)
 
 ## How It's Made:
 

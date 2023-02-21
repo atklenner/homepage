@@ -6,7 +6,6 @@ export const ToDoContext = createContext(null);
 export const ToDoDispatchContext = createContext(null);
 
 const initialTasks = [
-    {id: 1, text: "This is a task list", done: false},
   ];
 
 export function ToDoProvider({children}) {

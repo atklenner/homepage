@@ -3,7 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Homepage</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/homepage/assets/apple-touch-icon-e7e5932c.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADM0lEQVRYR2NkGGDASIn9GSUNYiD9M3oaXpFrDtkOAFqu84/x/16QxUz/GZ2BjrhCjiPIcgCS5eAQAIJX5DqCZAcgWx7uKA+2feX+h2Q7AqcDVjEwsL1nkGJRY3j2y5GB4Q/IBnTLnYwkwA7Yd+4F2Y7A6YD5zHIPGBn/y/3/z7Az8e9jT1yWw+KdXEfgdMACZrmXDIwMYgz//x84UZicC01wYqBgh/kcPdEhO4Lhzz+XWf3NlwklTIIO+CIucu9SlC8P0CC8lsMsmrDmBsP1hx+JThN4HfBNRFDsaog7w28uTgZ8PodZvv7wY4Ydp54x8HKxMHz+Bk42BHMHTgdMlTR4eS3ITYxUy0X42RmKwzUZLtx+T1TCxOoAUIJj/PXr9F92Vg5SfA62PEyTQYiPnejcgeEAQqkdPVHBgh3dcmJzB4oD0ktrVP8zMB8hNsFtPvaEYcvxpwywYBfihfgcX+5gZPhrM7O75TZMDYoD0krrQhkZGFeF4clqyIZ3LLvK8OXLJ4aiCCN4sOPKdqAsugpYYv5jYgyf3dkALOcgACMK3t1eP02Qlz0TpuD9L1aGygs6cHND5Z4yOEtAKr/ff/4xMLxYxsAqEwPm//3PwJB3xhBMg4ALUF0IUD3crM8/pwupBmYhOxLDAf9fbu8FFj5FMEVvf7IxZJ42guuJU3zA4CP9AsoH2vR8MQODZBzcAdFHzRn+Qf3lLfWcIV4JXE9AvcvYxyjuWTy0HPD5NwvD7DuKcEfbi79mMBb6gDUE/gEDZNJNFYZ//yEBayT0nsFB/A1lIYAcXJhs1CjArxYoy0hGFIw6YMBD4Nfnbwzn5qyDu0Pe3phB0kgTZzbEVw6QlQZ+fvzCcHLCUrgDlNwsGWQs9ehXDgwpB9CkHCAlBCgqB2Inmyky/GNNM5RWdRPjFoQX/n9//WZ4ceEm3Gx+OUkGHglhhF3fbjAwcGkQtBuk4NXX9+fOP729i4GJedbi3EP3QWLwyihmotUWINebKJMoVARs6m9fWnDUC9UB/VYNDMyMdQz/MatoCu3Dop2xcUn+kQYUB4A4kRPMxZmYGFipbyHCxH//GH4vLzj5EiYCAPPpCz+THPQMAAAAAElFTkSuQmCC">
+    <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB7klEQVQ4T2NkwAPS0maygqRnzUr/jUsZIy6J2JISbg5G7i0g+R//v/os7un5ik0tigENDAws9QwMf+NKSrhAmoNtZR1AmtYefnwAlyEoBixglvv4i4ez/HRaRDhIs7uZFNjSnaee4TQExYC5HEpfroR6/nUPNeSDaQYZ8ObjT4aOZVcZPn37jeESuAEgP4s///rGJdyYA13zpLU3GCKc5Bkev/qG4RKwAYWFhZxfWPi2ITsbJP4WaPNEqGYtBQEU7/D8+eTV39//HWxAYmWlaLy96gV7Awmpax95Ge594WawFn3L8OndB4YfX54wqKmoM2x7KsEgwPYbLH7wwotnCw++MJjfXvUa7oX/L7YdA5plufCePMPWZ5IMLXpXGNT4PjMwfL7E8I9HnyHyqDmDCu8Xhlb9qyA7jzNKeFmBGBgGPPjCxfD8OweDjsAnBl5WYPoBGvCfV5/hxBshBh6WPwy6QHG8BqAmlv9gAxiABqAB3C748OAZw5fnbxjEdFQY2Hg54S5ADgO8Lri78xjD0xOXGQySAhj4ZMVIDwNsBhAMg+iJltPlBCSi2ZlZeX98/MLw68s3Bm5RQQZmNmBm/PuNgYGZCyUIfv79/fnRh1dLl+YfzQTHQvQEq1RGRgYNbLkNl9h/RoYbS/OOzQYAPcwDIAvSNI0AAAAASUVORK5CYII=">
+    <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiIiwic2hvcnRfbmFtZSI6IiIsImljb25zIjpbeyJzcmMiOiIvYW5kcm9pZC1jaHJvbWUtMTkyeDE5Mi5wbmciLCJzaXplcyI6IjE5MngxOTIiLCJ0eXBlIjoiaW1hZ2UvcG5nIn0seyJzcmMiOiIvYW5kcm9pZC1jaHJvbWUtNTEyeDUxMi5wbmciLCJzaXplcyI6IjUxMng1MTIiLCJ0eXBlIjoiaW1hZ2UvcG5nIn1dLCJ0aGVtZV9jb2xvciI6IiNmZmZmZmYiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiI2ZmZmZmZiIsImRpc3BsYXkiOiJzdGFuZGFsb25lIn0=">
+    <!-- HTML Meta Tags -->
+    <title>Home</title>
+    <meta name="description" content="A homepage that is easy for users to customize ">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://atklenner.github.io/homepage/">
+    <meta property="og:title" content="Home">
+    <meta property="og:description" content="A homepage that is easy for users to customize ">
+    <meta property="og:image" content="https://raw.githubusercontent.com/atklenner/homepage/main/screenshot.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="atklenner.github.io">
+    <meta property="twitter:url" content="https://atklenner.github.io/homepage/">
+    <meta name="twitter:title" content="Home">
+    <meta name="twitter:description" content="A homepage that is easy for users to customize ">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/atklenner/homepage/main/screenshot.png">
     <script type="module" crossorigin src="/homepage/assets/index-34c74ace.js"></script>
     <link rel="stylesheet" href="/homepage/assets/index-b6535a53.css">
   </head>

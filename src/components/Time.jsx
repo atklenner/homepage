@@ -1,7 +1,6 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
 function Time() {
-
   let [time, setTime] = useState(new Date());
 
   const dateOptions = {
@@ -15,20 +14,22 @@ function Time() {
 
   useEffect(() => {
     let timer = setInterval(() => {
-      setTime(new Date())
+      setTime(new Date());
     }, 1000);
 
-    return (() => {
+    return () => {
       clearInterval(timer);
-    })
-  })
+    };
+  });
 
   return (
     <div>
-      <p className="text-3xl lg:text-5xl font-bold">{time.toLocaleTimeString()}</p>
-      <p className="lg:text-xl">{time.toLocaleDateString(locale, dateOptions)}</p>
+      <p className="text-4xl md:text-5xl font-bold">
+        {time.toLocaleTimeString()}
+      </p>
+      <p className="text-xl">{time.toLocaleDateString(locale, dateOptions)}</p>
     </div>
-  )
+  );
 }
 
 export default Time;

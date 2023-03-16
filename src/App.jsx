@@ -13,7 +13,7 @@ function App() {
   return (
     <LinksProvider>
       <main
-        className={`${settings.theme} bg-base text-text flex justify-center min-h-[800px] max-h-screen px-4 md:px-8 2xl:px-24 py-4 md:py-8 2xl:py-12`}
+        className={`${settings.theme} bg-base text-text flex justify-center min-h-screen md:h-screen px-4 md:px-8 2xl:px-24 py-4 md:py-8 2xl:py-12`}
       >
         {" "}
         <div className="flex justify-center items-center w-full bg-crust rounded-2xl px-4 md:px-8 2xl:px-24 py-4 md:py-8 2xl:py-12">

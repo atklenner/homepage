@@ -1,6 +1,5 @@
 function Widget({ children, type }) {
-  let shortStyle =
-    type === "short" ? "row-span-2 basis-1/4" : "md:row-span-4 basis-1/2";
+  let shortStyle = type === "short" ? "row-span-2" : "md:row-span-4 grow";
   return (
     <section
       className={`
@@ -8,14 +7,12 @@ function Widget({ children, type }) {
       rounded-xl 
       flex 
       justify-center
-      items-center
       px-4
       md:px-4
       2xl:px-12
       py-2
       md:py-4
       2xl:py-6
-      grow-0
       overflow-auto
       ${shortStyle}
     `}
